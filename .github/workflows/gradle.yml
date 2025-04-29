@@ -13,15 +13,15 @@ on:
   pull_request:
     branches: [ "tanchukss" ]
   schedule:
-    - cron: '30 12 ** 3'
-    - cron: '00 22 ** 5'
+    - cron: '30 12 * * 3'
+    - cron: '00 22 * * 5'
 jobs:
   build:
 
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        node-version: [18.x, 20.x]
+        java-version: ['17','21']
 
     runs-on: ubuntu-latest
     permissions:
